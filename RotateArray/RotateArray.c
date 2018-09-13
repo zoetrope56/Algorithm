@@ -33,17 +33,5 @@ int main(void){
   }
   printf("\nDone\n");
 
-  /*
-  j=MAX%j;
-  for(i=0; i<j; i++){
-	if(i<MAX-j){
-	  array[i]^=array[j+i];
-	  array[j+i]^=array[i];
-	  array[i]^=array[j+i];
-	}else{
-	  array[i]^=array[i-
-	}
-  }
-  */
   return 0;
 }
