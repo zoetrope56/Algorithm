@@ -6,7 +6,7 @@ const unsigned char MAX = 30;
 const unsigned char MIN = 0;
 const unsigned char HOP = 10;
 
-const unsigned int COUNT = 100;
+const unsigned int LOOP_COUNT = 100;
 
 int CURRENT = 0;
 
@@ -14,9 +14,9 @@ int main(void)
 {
   srand((unsigned)time(NULL));
   unsigned char FLAG = 0;
-  int cnt, random;
+  int count;
   
-  for(cnt=0; cnt<COUNT; cnt++){
+  for(count=0; count<LOOP_COUNT; count++){
 	if(FLAG == 1){
 	  CURRENT -= rand()%HOP+1;
 	} else{
@@ -32,7 +32,7 @@ int main(void)
 	  FLAG = 0;
 	  printf("PONG!\n");
 	}
-	printf("%3d : %d\n", cnt, CURRENT);
+	printf("%3d : %d\n", count+1, CURRENT);
   }
   printf("END\n");
   return 0;
