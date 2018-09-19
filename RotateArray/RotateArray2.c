@@ -2,9 +2,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define COL 5 
-#define ROW 5
+// MINIMUM 3*3
 
+// COL: FLAG
+// 3 : 5 
+// 5 : 8
+// 7 : 11
+// 11 : 11
+
+#define COL 11 
+#define ROW 11
+#define FLAG 11
 int array[ROW][COL]={{0,}};
 
 int main(void)
@@ -24,7 +32,8 @@ int main(void)
   }
 
   printf("\n\n--------ROTATED---------\n");
-  while(count < 8){
+
+  while(count < FLAG){
 	diff = count/4;
 	switch(count%4){
 	  case 0:
@@ -49,10 +58,15 @@ int main(void)
 		array[diff+1][COL-diff-1] = t1;
 		break;
 	  case 2:
+		
 		for(i=diff; i<COL-diff-1; i++){
+		  
 		  if(i==diff){
 			t1 = array[ROW-diff-1][diff];
-			array[ROW-diff-1][diff-1+i] = array[ROW-diff-1][diff+1];
+			if(diff-1+i<0){;}
+			else{
+			  array[ROW-diff-1][diff-1+i] = array[ROW-diff-1][diff+i];
+			}
 		  } else {
 			array[ROW-diff-1][diff-1+i] = array[ROW-diff-1][diff+i];
 		  }
