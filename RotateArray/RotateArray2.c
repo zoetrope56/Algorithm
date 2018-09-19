@@ -10,9 +10,9 @@
 // 7 : 11
 // 11 : 11
 
-#define COL 11 
-#define ROW 11
-#define FLAG 11
+#define COL 5 
+#define ROW 5
+#define FLAG 8
 int array[ROW][COL]={{0,}};
 
 int main(void)
