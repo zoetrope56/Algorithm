@@ -12,5 +12,5 @@ def solution(numbers):
   print(length)
   print(maxlen)
   print(temp)
-  return str(''.join(temp))
+  return str(int(''.join(temp)))
 print(solution(num))
