@@ -43,13 +43,12 @@ for item in list_combined:
   for element in item:
     list_temp = []
     index_temp = []
-    flag = True
     for i in element:
       index_temp.append(i) 
       print('selected', selected,'index_temp', index_temp, 'i', i)
       if index_temp in selected or i in selected:
-        flag=False
         continue
+      
       t=[]
       for j in range(len(mydict[i])):
         t.append(mydict[i][j])
@@ -65,5 +64,19 @@ for item in list_combined:
   
     print('---')
 
-print(selected)
-#  print(get_keys(mydict, 0,1))
+for i in range(len(selected)):
+  for j in range(i+1, len(selected)):
+    temp_a = selected[i]
+    temp_b = selected[j]
+    if not(type(temp_a) == list):
+      temp_a = [temp_a]
+    if not(type(temp_b) == list):
+      temp_b = [temp_b]
+    
+    if len(list(set(temp_a) & set(temp_b))) > 0:
+      if len(temp_a) > len(temp_b):
+        del(selected[i])
+      else:
+        del(selected[j])
+print(len(selected))
+
