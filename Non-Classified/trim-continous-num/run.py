@@ -1,16 +1,14 @@
 arr = [1,1,3,3,0,1,1]
-def solution(arr):
-  temp = ''
+def solution(origin):
   count = 0
-  for a in arr:
-    if temp == a:
-      arr[count]=-1
+  modify = [-1]
+  for item in origin:
+    if item == modify[count]:
+      pass
     else:
-      temp = a
-    count+=1
-  while -1 in arr:
-    arr.remove(-1)
-  return arr
-
+      modify.append(item)
+      count+=1
+  del(modify[0])
+  return modify
 print(solution(arr))
 
