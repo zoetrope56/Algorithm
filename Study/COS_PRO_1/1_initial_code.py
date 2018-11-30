@@ -43,9 +43,7 @@ def solution(order_list):
     total_price = delivery_store.get_total_price()
     return total_price
 
-#아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 order_list = ["Cheese", "Pineapple", "Meatball"]
 ret = solution(order_list)
 
-#[실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-print("solution 함수의 반환 값은", ret, "입니다.")
+print(ret)
